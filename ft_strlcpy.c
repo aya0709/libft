@@ -6,7 +6,7 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 02:12:36 by ataira            #+#    #+#             */
-/*   Updated: 2023/01/31 02:02:11 by ataira           ###   ########.fr       */
+/*   Updated: 2023/01/31 02:37:14 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	len = ft_strlen(src);
 	if (size == 0)
 		return (len);
-	if (size < len)
+	if (size <= len)
 		len = size - 1;
 	while (i < len)
 	{

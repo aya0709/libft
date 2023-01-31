@@ -6,7 +6,7 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:02:16 by ataira            #+#    #+#             */
-/*   Updated: 2023/01/31 02:07:34 by ataira           ###   ########.fr       */
+/*   Updated: 2023/01/31 02:37:49 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-int	main(void)
-{
-	char	*str;
-	char	*s;
+// int	main(void)
+// {
+// 	char	*str;
+// 	char	*s;
 
-	s = "libft-test-tokyo";
-	// str = ft_substr(s, 10, 5);
-	// printf("%s\n", str);
-	str = ft_substr(s, 15, 0);
-	printf("%s", str);
-	return (0);
-}
+// 	s = "libft-test-tokyo";
+// 	// str = ft_substr(s, 10, 5);
+// 	// printf("%s\n", str);
+// 	str = ft_substr(s, 15, 0);
+// 	printf("%s", str);
+// 	return (0);
+// }
