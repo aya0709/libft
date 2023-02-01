@@ -6,7 +6,7 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:02:16 by ataira            #+#    #+#             */
-/*   Updated: 2023/01/31 02:37:49 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/01 19:00:03 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (ft_strlen(s) < start)
 		start = ft_strlen(s);
-	printf("%zu",len);
 	ft_strlcpy(str, s + start, len + 1);
 	return (str);
 }
