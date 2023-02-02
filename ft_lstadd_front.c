@@ -6,7 +6,7 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 03:22:17 by ataira            #+#    #+#             */
-/*   Updated: 2023/02/01 17:07:06 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/01 19:44:19 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		return ;
 	if (lst == NULL)
 		*lst = new;
-	new->next = *lst;
+	new->next = (*lst)->next;
+	(*lst)->next = new;
 	return ;
 }
