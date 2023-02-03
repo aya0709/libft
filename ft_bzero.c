@@ -6,7 +6,7 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 19:28:01 by ataira            #+#    #+#             */
-/*   Updated: 2023/01/15 03:54:56 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/03 02:54:22 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *b, size_t len)
 	i = 0;
 	while (i != len)
 	{
-		*((char *)b + i) = '\0';
+		*((unsigned char *)b + i) = '\0';
 		i++;
 	}
 	return ;

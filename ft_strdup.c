@@ -6,7 +6,7 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 06:49:18 by ataira            #+#    #+#             */
-/*   Updated: 2023/01/31 01:09:07 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/03 04:24:53 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@ char	*ft_strdup(const char *str)
 	char	*str_cp;
 	size_t	len;
 
+	if (str == NULL)
+		return (NULL);
 	len = ft_strlen(str);
-	str_cp = (char *)ft_calloc(len, sizeof(char));
+	str_cp = (char *)ft_calloc(len + 1, sizeof(char));
+	if (str_cp == NULL)
+		return (NULL);
 	ft_memcpy(str_cp, str, len * sizeof(char));
 	return (str_cp);
 }
@@ -28,7 +32,7 @@ char	*ft_strdup(const char *str)
 // #include <malloc/malloc.h>
 // int main(void)
 // {
-//    char *string = "this is a copy";
+//    char *string = NULL;
 //    char *newstr;
 //    char *newstr_;
 

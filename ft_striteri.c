@@ -6,7 +6,7 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 21:19:25 by ataira            #+#    #+#             */
-/*   Updated: 2023/01/30 23:43:38 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/03 00:41:28 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int	len;
-	int	i;
+	size_t	len;
+	size_t	i;
 
 	len = ft_strlen(s);
 	i = 0;

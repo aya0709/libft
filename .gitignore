@@ -2,3 +2,5 @@
 *.o
 a.out
 libft-tester-tokyo/
+libftTester/
+ft_lst*

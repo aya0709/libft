@@ -6,13 +6,13 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 05:46:43 by ataira            #+#    #+#             */
-/*   Updated: 2023/01/31 01:13:40 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/03 03:00:11 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isendfunc(const char *haystack, const char *needle, size_t len)
+static int	isendfunc(const char *haystack, const char *needle, size_t len)
 {
 	if (haystack == NULL)
 		return (0);

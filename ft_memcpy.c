@@ -6,7 +6,7 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 22:07:54 by ataira            #+#    #+#             */
-/*   Updated: 2023/02/01 19:00:49 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/03 03:33:47 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,21 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
-	size_t	i;
+	size_t				i;
+	unsigned char		*ucdst;
+	const unsigned char	*cucsrc;
 
 	i = 0;
-	while (i != len)
+	ucdst = (unsigned char *)dst;
+	cucsrc = (const unsigned char *)src;
+	if (cucsrc == ucdst)
+		return ((void *)dst);
+	while (i < len)
 	{
-		*((char *)(dst + i)) = *(char *)(src + i);
+		*(ucdst + i) = *(cucsrc + i);
 		i++;
 	}
-	return (dst);
+	return ((void *)ucdst);
 }
 
 // int	main(void)

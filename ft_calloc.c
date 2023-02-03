@@ -6,7 +6,7 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 06:05:24 by ataira            #+#    #+#             */
-/*   Updated: 2023/01/30 20:28:39 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/03 04:13:55 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	*ft_calloc(size_t n, size_t size)
 {
-	size_t	*str;
-	size_t	int_max;
+	void	*str;
 
-	int_max = 2147483648;
 	if (n == 0 || size == 0)
 	{
 		str = malloc(1);
@@ -26,7 +24,7 @@ void	*ft_calloc(size_t n, size_t size)
 		ft_memset(str, '\0', 1);
 		return (str);
 	}
-	if (int_max / n <= size)
+	if (SIZE_MAX / n < size)
 		return (NULL);
 	str = malloc(size * n);
 	if (str == NULL)

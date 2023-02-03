@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sprit.c                                         :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:53:44 by ataira            #+#    #+#             */
-/*   Updated: 2023/02/01 18:54:06 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/03 05:15:52 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_size(char const *s, char c, int **lensandindxs)
+static int	get_size(char const *s, char c, int **lensandindxs)
 {
-	int	i;
-	int	len;
-	int	cnt;
+	size_t	i;
+	int		len;
+	size_t	lens;
+	size_t	cnt;
 
 	i = 0;
 	len = 0;
+	lens = ft_strlen(s);
 	cnt = 0;
-	while ((size_t)i <= ft_strlen(s))
+	while (i <= lens)
 	{
 		if (s[i] != c && s[i] != '\0')
 			len++;
 		else if (len != 0)
 		{
 			(*lensandindxs)[cnt] = len + 1;
-			(*lensandindxs)[cnt + ft_strlen(s)] = i - len;
+			(*lensandindxs)[cnt + lens] = i - len;
 			cnt++;
 			len = 0;
 		}
@@ -37,32 +39,46 @@ int	get_size(char const *s, char c, int **lensandindxs)
 	return (cnt);
 }
 
+static void	freemem(char **str, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < len)
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+	return ;
+}
+
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		cnt;
-	int		*lensandindxs;
+	size_t	cnt;
+	int		*lensindxs;
 	char	**str;
 
 	if (s == NULL)
 		return (NULL);
-	lensandindxs = ft_calloc(2 * ft_strlen(s) + 1, sizeof(int));
-	if (lensandindxs == NULL)
+	lensindxs = ft_calloc(2 * ft_strlen(s) + 1, sizeof(int));
+	if (lensindxs == NULL)
 		return (NULL);
-	cnt = get_size(s, c, &lensandindxs);
+	cnt = get_size(s, c, &lensindxs);
 	str = ft_calloc(cnt + 1, sizeof(char *));
 	if (str == NULL)
 		return (NULL);
-	i = 0;
-	while (i < cnt)
+	while (0 < --cnt)
 	{
-		str[i] = ft_calloc(lensandindxs[i], sizeof(char));
-		if (str[i] == NULL)
+		str[cnt] = ft_calloc(lensindxs[cnt], sizeof(char));
+		if (str[cnt] == NULL)
+		{
+			freemem(str, cnt);
 			return (NULL);
-		ft_strlcpy(str[i], s + lensandindxs[i + ft_strlen(s)], lensandindxs[i]);
-		i++;
+		}
+		ft_strlcpy(str[cnt], s + lensindxs[cnt + ft_strlen(s)], lensindxs[cnt]);
 	}
-	free(lensandindxs);
+	free(lensindxs);
 	return (str);
 }
 

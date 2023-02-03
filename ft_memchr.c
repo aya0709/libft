@@ -6,7 +6,7 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 06:23:01 by ataira            #+#    #+#             */
-/*   Updated: 2023/01/20 13:49:59 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/03 03:40:09 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 
 void	*ft_memchr(const void *buf, int ch, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*ucbuf;
+	unsigned char	ucch;
 
 	i = 0;
+	ucbuf = (unsigned char *)buf;
+	ucch = (unsigned char)ch;
 	while (i < n)
 	{
-		if (((char *)buf)[i] == (char)ch)
+		if ((ucbuf)[i] == ucch)
 		{
-			return (&((char *)buf)[i]);
+			return ((void *)&(ucbuf)[i]);
 		}
 		i++;
 	}

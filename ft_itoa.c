@@ -6,13 +6,13 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 11:15:22 by ataira            #+#    #+#             */
-/*   Updated: 2023/01/30 20:27:02 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/03 02:57:13 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	cnt_digit(long n)
+static int	cnt_digit(long n)
 {
 	int	digit;
 
@@ -30,7 +30,7 @@ int	cnt_digit(long n)
 	return (digit);
 }
 
-char	*setstr(long digit, long lnb, long n)
+static char	*setstr(long digit, long lnb, long n)
 {
 	char	*str;
 

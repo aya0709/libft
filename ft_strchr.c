@@ -6,7 +6,7 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 04:43:53 by ataira            #+#    #+#             */
-/*   Updated: 2023/01/20 13:35:29 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/03 03:43:36 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-	int	len;
+	size_t			i;
+	size_t			len;
+	unsigned char	*ucs;
 
 	i = 0;
 	len = ft_strlen(s);
+	ucs = (unsigned char *)s;
 	while (i <= len)
 	{
-		if (s[i] == (char)c)
+		if (ucs[i] == (char)c)
 		{
-			return ((char *)&s[i]);
+			return ((char *)&ucs[i]);
 		}
 		i++;
 	}

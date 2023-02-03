@@ -6,13 +6,13 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 09:40:56 by ataira            #+#    #+#             */
-/*   Updated: 2023/02/01 20:09:43 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/04 00:10:02 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isnegative(char c)
+static int	isnegative(char c)
 {
 	if (c == '-')
 		return (-1);
@@ -23,14 +23,14 @@ int	isnegative(char c)
 
 int	ft_atoi(const char *str)
 {
-	int	index;
-	int	res;
-	int	sign;
+	size_t	index;
+	int		res;
+	int		sign;
 
 	index = 0;
 	res = 0;
 	sign = 1;
-	while (str[index] == ' ')
+	while ((9 <= str[index] && str[index] <= 13) || str[index] == 32)
 		index++;
 	if (isnegative(str[index]) != 0)
 	{
@@ -52,11 +52,11 @@ int	ft_atoi(const char *str)
 
 // int	main(void)
 // {
-//printf("%d=%d\n", atoi("+1"), ft_atoi("+1"));
+// printf("%d=%d\n", atoi("+1"), ft_atoi("+1"));
 // printf("%d=%d\n", atoi("9223372036854775808"),
 // ft_atoi("9223372036854775808"));
-// printf("%d=%d\n", atoi("-9223372036854775809"),
-// ft_atoi("-9223372036854775809"));
+// printf("%d=%d\n", atoi("-922"),
+// ft_atoi("-922"));
 // printf("%d=%d\n", atoi("18446744073709551616"),
 // ft_atoi("18446744073709551616"));
 // printf("%d=%d\n", atoi("18446744073709551616"),

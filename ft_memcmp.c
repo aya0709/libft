@@ -6,7 +6,7 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 04:52:36 by ataira            #+#    #+#             */
-/*   Updated: 2023/01/31 01:08:37 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/03 03:40:36 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_memcmp(const void *buf1, const void *buf2, size_t n)
 	{
 		if (buf1_tmp[i] != buf2_tmp[i])
 		{
-			return (buf1_tmp[i] - buf2_tmp[i]);
+			return ((int)(buf1_tmp[i] - buf2_tmp[i]));
 		}
 		i++;
 	}
