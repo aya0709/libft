@@ -6,7 +6,7 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 16:53:44 by ataira            #+#    #+#             */
-/*   Updated: 2023/02/03 05:15:52 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/05 22:16:14 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	**ft_split(char const *s, char c)
 	str = ft_calloc(cnt + 1, sizeof(char *));
 	if (str == NULL)
 		return (NULL);
-	while (0 < --cnt)
+	while (0 < cnt--)
 	{
 		str[cnt] = ft_calloc(lensindxs[cnt], sizeof(char));
 		if (str[cnt] == NULL)
@@ -88,10 +88,10 @@ char	**ft_split(char const *s, char c)
 // 	char	**str;
 
 // 	i = 0;
-// 	str = ft_split("a,b,c,,", ',');
+// 	str = ft_split("hello,world,42,tokyo", ',');
 // 	while (str[i] != NULL)
 // 	{
-// 		printf("%s\n", str[i]);
+// 		printf("%zu %s\n",i ,str[i]);
 // 		i++;
 // 	}
 // 	free(str);

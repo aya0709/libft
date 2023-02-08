@@ -6,7 +6,7 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:35:34 by ataira            #+#    #+#             */
-/*   Updated: 2023/02/03 00:42:02 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/05 00:55:58 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 	char	*str;
 
+	if (s == NULL || f == NULL)
+		return (NULL);
 	len = ft_strlen(s);
 	i = 0;
 	str = ft_calloc(len + 1, sizeof(char));

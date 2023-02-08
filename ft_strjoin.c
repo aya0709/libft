@@ -6,7 +6,7 @@
 /*   By: ataira <ataira@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:15:47 by ataira            #+#    #+#             */
-/*   Updated: 2023/02/01 18:55:52 by ataira           ###   ########.fr       */
+/*   Updated: 2023/02/05 00:54:02 by ataira           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 
-	if (s1 == NULL && s2 == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	str = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
 	if (str == NULL)
